@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-import { source } from "@/lib/source";
+import { Command } from "@/components/docs/ui/command";
+import { source } from "@/lib/docs/source";
 
 export function generateStaticParams() {
   return source.generateParams();
@@ -43,6 +43,7 @@ export default async function Page({
 
   return (
     <main className="space-y-4">
+      <Command />
       <header>
         <h1 className="font-medium text-3xl">{page.data.title}</h1>
         <p>{page.data.description}</p>
