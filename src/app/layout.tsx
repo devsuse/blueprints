@@ -1,32 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Geist_Pixel } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { Background } from "@/components/layout/background";
+import { NextProvider } from "fumadocs-core/framework/next";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Blueprints",
   description: "Components built to perfection, to copy and adapt.",
+  title: {
+    default: "Blueprints",
+    template: "%s / Blueprints",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="en"
     >
-      <body className="min-h-full flex flex-col bg-neutral-950">
-        <Background>{children}</Background>
+      <body>
+        <NextProvider>{children}</NextProvider>
       </body>
     </html>
   );
