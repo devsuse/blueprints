@@ -10,14 +10,8 @@
       "title": "Blueprints",
       "description": "A collection of reusable components and utilities for building web applications.",
       "config": {
-        "style": "default",
-        "iconLibrary": "lucide"
+        "style": "default"
       },
-      "dependencies": [
-        "@base-ui/react",
-        "cn",
-        "lucide-react"
-      ],
       "cssVars": {
         "light": {
           "--background": "var(--color-neutral-50)",
