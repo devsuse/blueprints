@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "blueprints",
+  "homepage": "https://github.com/devsuse/blueprints",
+  "items": [
+    {
+      "name": "base",
+      "type": "registry:base",
+      "extends": "none",
+      "title": "Blueprints",
+      "description": "A collection of reusable components and utilities for building web applications.",
+      "config": {
+        "style": "default",
+        "iconLibrary": "lucide"
+      },
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "--background": "var(--color-neutral-50)",
+          "--foreground": "var(--color-neutral-950)"
+        },
+        "dark": {
+          "--background": "var(--color-neutral-950)",
+          "--foreground": "var(--color-neutral-50)"
+        }
+      }
+    }
+  ]
+}
