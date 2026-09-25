@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { Command } from "@/components/docs/ui/command";
+
+import { getMDXComponents } from "@/lib/docs/mdx";
 import { source } from "@/lib/docs/source";
 
 export function generateStaticParams() {
@@ -50,7 +53,7 @@ export default async function Page({
       </header>
 
       <section>
-        <MDX />
+        <MDX components={getMDXComponents()} />
       </section>
     </main>
   );
